@@ -1,4 +1,6 @@
 import './App.css';
+import Board from "./components/Board";
+import Keyboard from './components/Keyboard';
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
         </nav>
 
         <Board />
-        
+
         <Keyboard />
     </div>
   );
