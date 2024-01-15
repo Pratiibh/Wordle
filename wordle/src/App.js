@@ -13,6 +13,8 @@ function App() {
     const [currAttempt, setCurrAttempt] = useState({attempt: 0, letterPos: 0})
     const [wordSet, setWordSet] = useState(new Set())
     const [disabledLetters, setDisabledLetter] = useState([]);
+    const [enabledLetters, setEnabledLetter] = useState([]);
+    const [almostLetters, setAlmostLetter] = useState([]);
     const [correctWord, setCorrectWord] = useState("")
     const [gameOver, setGameOver] = useState({gameOver: false, guessedWord: false});
 
@@ -68,7 +70,7 @@ function App() {
         <nav>
             <h1>Wordle</h1>
         </nav>
-        <AppContext.Provider value ={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, correctWord, disabledLetters, setDisabledLetter, setGameOver, gameOver}}>
+        <AppContext.Provider value ={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, correctWord, disabledLetters, setDisabledLetter, setGameOver, gameOver, enabledLetters, setEnabledLetter, almostLetters, setAlmostLetter}}>
         <div className="game">
             <Board />
             {gameOver.gameOver ? <GameOver /> : <Keyboard />}
