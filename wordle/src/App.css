@@ -148,12 +148,15 @@ nav h1 {
 
 #enabled {
   background-color: #528d4e;
+  transition-delay: 1.5s;
 }
 #disabled {
   background-color: #3a393c;
+  transition-delay: 1.5s;
 }
 #almostEnabled {
   background-color: #b49f39;
+  transition-delay: 1.5s;
 }
 
 /* animations */
