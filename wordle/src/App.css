@@ -65,15 +65,38 @@ nav h1 {
 }
 
 #correct {
-  background-color: #528d4e;
+  --background-color: #528d4e;
+  animation: flip 0.5s ease forwards;
 }
 
 #almost {
-  background-color: #b49f39;
+  --background-color: #b49f39;
+  animation: flip 0.5s ease forwards;
 }
 
 #error {
-  background-color: #3a393c;
+  --background-color: #3a393c;
+  animation: flip 0.5s ease forwards;
+}
+
+/* nth child 2 */
+.row > #correct:nth-child(2), #almost:nth-child(2), #error:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+/* nth child 3 */
+.row > #correct:nth-child(3), #almost:nth-child(3), #error:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+/* nth child 4 */
+.row > #correct:nth-child(4), #almost:nth-child(4), #error:nth-child(4) {
+  animation-delay: 0.75s;
+}
+
+/* nth child 5 */
+.row > #correct:nth-child(5), #almost:nth-child(5), #error:nth-child(5) {
+  animation-delay: 1s;
 }
 
 .keyboard {
@@ -122,6 +145,31 @@ nav h1 {
 #big {
   width: 100px;
 }
+
+#enabled {
+  background-color: #528d4e;
+}
 #disabled {
   background-color: #3a393c;
+}
+#almostEnabled {
+  background-color: #b49f39;
+}
+
+/* animations */
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  45%{
+    transform: rotateX(90deg);
+  }
+  55%{
+    transform: rotateX(90deg);
+    background: var(--background-color);
+  }
+  100% {
+    transform: rotateX(0);
+    background: var(--background-color);
+  }
 }
