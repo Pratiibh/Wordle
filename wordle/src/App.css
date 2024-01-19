@@ -39,7 +39,7 @@ nav h1 {
 .board {
   width: 450px;
   height: 550px;
-  border: 1px solid black;
+  border: 1px solid #121212;
   display: flex;
   flex-direction: column;
 }
@@ -174,5 +174,62 @@ nav h1 {
   100% {
     transform: rotateX(0);
     background: var(--background-color);
+  }
+}
+
+/* mobile adaptations */
+@media all and (max-width: 630px) {
+  .game {
+    width: 80vw;
+    height: calc(100vh - 170px);
+    display: inline-block;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+  }
+
+  .board {
+    width: 80vw;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    flex-direction: column;
+  }
+
+  .keyboard {
+    width: 70vw;
+    height: 100px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .key {
+    height: 50px;
+  }
+
+  .line1 > .key {
+    min-width: 25px;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
+  .line2 > .key {
+    min-width: 25px;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
+  .line3 > .key:nth-child(2), .key:nth-child(3), .key:nth-child(4), .key:nth-child(5), .key:nth-child(6), .key:nth-child(7), .key:nth-child(8) {
+    min-width: 25px;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
+  .letter {
+    width: 15vw;
   }
 }
