@@ -3,7 +3,6 @@
   background-color: #121212;
   width: 100vw;
   height: 100vh;
-  /* display: flex; */
   color: white;
 }
  
@@ -28,8 +27,6 @@ nav h1 {
   font-size: 45px;
 }
 .game {
-  width: 100vw;
-  height: calc(100vh - 170px);
   display: flex;
   align-items: center;
   padding-top: 50px;
@@ -38,7 +35,7 @@ nav h1 {
 
 .board {
   width: 450px;
-  height: 550px;
+  height: 500px;
   border: 1px solid #121212;
   display: flex;
   flex-direction: column;
@@ -54,7 +51,7 @@ nav h1 {
 .letter {
   flex: 33%;
   height: 100%;
-  border: 1px solid grey;
+  border: 2px solid #3a3a3c;
   margin: 5px;
   display: grid;
   place-items: center;
@@ -102,7 +99,7 @@ nav h1 {
 .keyboard {
   width: 700px;
   height: 300px;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .line1 {
@@ -163,21 +160,37 @@ nav h1 {
   transition-delay: 1.5s;
 }
 
+div.letter:not(:empty) {
+  animation: pop 200ms ease forwards;
+  border: 2px solid #818384;
+}
+
 /* animations */
 @keyframes flip {
   0% {
     transform: rotateX(0);
   }
-  45%{
+  45% {
     transform: rotateX(90deg);
   }
-  55%{
+  55% {
     transform: rotateX(90deg);
     background: var(--background-color);
   }
   100% {
     transform: rotateX(0);
     background: var(--background-color);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
   }
 }
 
@@ -198,7 +211,6 @@ nav h1 {
 
   .board {
     width: 80vw;
-    /* height: 39vh; */
     height: 400px;
     display: flex;
     padding: 10px 0px;
@@ -214,7 +226,7 @@ nav h1 {
   .keyboard {
     width: auto;
     height: 100px;
-    margin: 20px 8px;
+    margin: 40px 8px;
     align-items: center;
     flex-direction: column;
   }
