@@ -51,7 +51,7 @@ function App() {
 
         if(wordSet.has(currWord.toLowerCase())) {
             setCurrAttempt({attempt: currAttempt.attempt + 1, letterPos: 0});
-        } else {
+        } else if(!(wordSet.has(currWord.toLowerCase()))) {
             alert("Word Not Found")
         }
 
@@ -60,11 +60,13 @@ function App() {
             return;
         }
 
-        if (currAttempt.attempt === 5) {
-            setGameOver({gameOver: true, guessedWord: false})
+        if (currAttempt.attempt === 5 && wordSet.has(currWord.toLowerCase())) {
+            setGameOver({gameOver: true, guessedWord: false});
+        } else if(currAttempt.attempt === 5 && !(wordSet.has(currWord.toLowerCase()))){
+            return;
         }
-
     }
+
   return (
     <div className="App">
         <nav>
