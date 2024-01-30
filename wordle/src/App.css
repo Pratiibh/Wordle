@@ -1,10 +1,49 @@
+[data-theme="dark"] {
+  --background-app-color: #121212;
+  --nav-h1-color: white;
+  --board-border-color: #121212;
+  --keyboard-text-color: white;
+  --keyboard-key-background-color: grey;
+  --board-letter-color: white;
+  --board-after-flip-letter-color: white;
+  --key-border-color: #3a3a3c;
+  --key-border-post-animation-color: #818384;
+  --key-background-color-incorrect: #3a393c;
+  --key-background-color-maybe: #b49f39;
+  --key-background-color-correct: #528d4e;
+  --keyboard-background-color-incorrect: #3a393c;
+  --keyboard-background-color-maybe: #b49f39;
+  --keyboard-background-color-correct: #528d4e;
+  --gameover-text-color: white;
+  --border-bottom-color: grey;
+}
+
+[data-theme="light"] {
+  --background-app-color: white;
+  --nav-h1-color: #121212;
+  --board-border-color: white;
+  --keyboard-text-color: white;
+  --keyboard-key-background-color: #a4a7aa;
+  --board-letter-color: #121212;
+  --board-after-flip-letter-color: white;
+  --key-border-color: #818384;
+  --key-border-post-animation-color: #121212;
+  --key-background-color-incorrect: #6a686d;
+  --key-background-color-maybe: #e1c330;
+  --key-background-color-correct: #4fad48;
+  --keyboard-background-color-incorrect: #6a686d;
+  --keyboard-background-color-maybe: #e1c330;
+  --keyboard-background-color-correct: #4fad48;
+  --gameover-text-color: #121212;
+  --border-bottom-color: #121212;
+}
+
 .App {
   text-align: center;
-  background-color: #121212;
+  background-color: var(--background-app-color);
   width: 100vw;
   height: 100vh;
-  /* display: flex; */
-  color: white;
+  color: var(--gameover-text-color);
 }
  
 body {
@@ -16,30 +55,38 @@ nav {
   height: 60px;
   width: 100%;
   margin: 0;
-  border-bottom: 1px solid grey;
-  display: grid;
+  border-bottom: 1px solid var(--border-bottom-color);
+  display: flex;
   place-items: center;
 }
 
 nav h1 {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
-  color: white;
+  color: var(--nav-h1-color);
   font-size: 45px;
+  display: flex;
+}
+
+nav h3 {
+  width: 72px;
+  height: 30px;
+  margin-right: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  visibility: hidden;
 }
 .game {
-  width: 100vw;
-  height: calc(100vh - 170px);
   display: flex;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 30px;
   flex-direction: column;
 }
 
 .board {
   width: 450px;
-  height: 550px;
-  border: 1px solid #121212;
+  height: 500px;
+  border: 1px solid var(--board-border-color);
   display: flex;
   flex-direction: column;
 }
@@ -54,55 +101,68 @@ nav h1 {
 .letter {
   flex: 33%;
   height: 100%;
-  border: 1px solid grey;
+  border: 2px solid var(--key-border-color);
   margin: 5px;
   display: grid;
   place-items: center;
   font-size: 30px;
   font-weight: bolder;
-  color: white;
+  color: var(--board-letter-color);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 #correct {
-  --background-color: #528d4e;
+  --background-color: var(--key-background-color-correct);
   animation: flip 0.5s ease forwards;
 }
 
 #almost {
-  --background-color: #b49f39;
+  --background-color: var(--key-background-color-maybe);
   animation: flip 0.5s ease forwards;
 }
 
 #error {
-  --background-color: #3a393c;
+  --background-color: var(--key-background-color-incorrect);
   animation: flip 0.5s ease forwards;
+}
+
+/* nth child 1 */
+.row > #correct:nth-child(1), #almost:nth-child(1), #error:nth-child(1) {
+  color: var(--board-after-flip-letter-color);
 }
 
 /* nth child 2 */
 .row > #correct:nth-child(2), #almost:nth-child(2), #error:nth-child(2) {
   animation-delay: 0.25s;
+  color: var(--board-after-flip-letter-color);
+  transition-delay: 0.25s;
 }
 
 /* nth child 3 */
 .row > #correct:nth-child(3), #almost:nth-child(3), #error:nth-child(3) {
   animation-delay: 0.5s;
+  color: var(--board-after-flip-letter-color);
+  transition-delay: 0.5s;
 }
 
 /* nth child 4 */
 .row > #correct:nth-child(4), #almost:nth-child(4), #error:nth-child(4) {
   animation-delay: 0.75s;
+  color: var(--board-after-flip-letter-color);
+  transition-delay: 0.75s;
 }
 
 /* nth child 5 */
 .row > #correct:nth-child(5), #almost:nth-child(5), #error:nth-child(5) {
   animation-delay: 1s;
+  color: var(--board-after-flip-letter-color);
+  transition-delay: 1s;
 }
 
 .keyboard {
   width: 700px;
   height: 300px;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .line1 {
@@ -137,8 +197,8 @@ nav h1 {
   place-items: center;
   font-size: 20px;
   font-weight: bold;
-  background-color: grey;
-  color: white;
+  background-color: var(--keyboard-key-background-color);
+  color: var(--keyboard-text-color);
   font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
@@ -151,16 +211,25 @@ nav h1 {
 }
 
 #enabled {
-  background-color: #528d4e;
+  background-color: var(--keyboard-background-color-correct);
   transition-delay: 1.5s;
 }
 #disabled {
-  background-color: #3a393c;
+  background-color: var(--keyboard-background-color-incorrect);
   transition-delay: 1.5s;
 }
 #almostEnabled {
-  background-color: #b49f39;
+  background-color: var(--keyboard-background-color-maybe);
   transition-delay: 1.5s;
+}
+
+div.letter:not(:empty) {
+  animation: pop 200ms ease forwards;
+  border: 2px solid var(--key-border-post-animation-color);
+}
+
+* :not(#correct, #almost, #error){
+  transition: all 1s ease-in-out;
 }
 
 /* animations */
@@ -168,16 +237,27 @@ nav h1 {
   0% {
     transform: rotateX(0);
   }
-  45%{
+  45% {
     transform: rotateX(90deg);
   }
-  55%{
+  55% {
     transform: rotateX(90deg);
     background: var(--background-color);
   }
   100% {
     transform: rotateX(0);
     background: var(--background-color);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
   }
 }
 
@@ -198,7 +278,6 @@ nav h1 {
 
   .board {
     width: 80vw;
-    /* height: 39vh; */
     height: 400px;
     display: flex;
     padding: 10px 0px;
@@ -214,7 +293,7 @@ nav h1 {
   .keyboard {
     width: auto;
     height: 100px;
-    margin: 20px 8px;
+    margin: 40px 8px;
     align-items: center;
     flex-direction: column;
   }
