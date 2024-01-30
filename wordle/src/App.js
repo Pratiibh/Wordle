@@ -4,6 +4,7 @@ import Keyboard from './components/Keyboard';
 import { createContext, useEffect, useState } from 'react';
 import { boardDefault, generateWordSet } from './Words';
 import GameOver from "./components/GameOver";
+import ToggleMode from "./components/navToggle/ToggleMode"
 
 
 export const AppContext = createContext();
@@ -70,7 +71,11 @@ function App() {
   return (
     <div className="App">
         <nav>
+            <h3 className="centerNav"> </h3>
             <h1>Wordle</h1>
+            <div className="toggleMode">
+            <ToggleMode/>
+            </div>
         </nav>
         <AppContext.Provider value ={{ board, setBoard, currAttempt, setCurrAttempt, onSelectLetter, onDelete, onEnter, correctWord, disabledLetters, setDisabledLetter, setGameOver, gameOver, enabledLetters, setEnabledLetter, almostLetters, setAlmostLetter}}>
         <div className="game">
