@@ -3,13 +3,15 @@
 Ever played Wordle? Can't get enough of it? This here is for you!
 Welcome to Infinite-Wordle, where you can play as many Wordle puzzles as you'd like without having a 24 hour timer for a new puzzle.
 
+Upon finishing a puzzle, simply refresh the page and a new puzzle will be ready for you! Don't forget to set your client up for light/dark mode, located at the top right. Mobile-friendly so that you can play on the go!
+
 # Access
 
 Play at [infinite-wordle.netlify.app](infinite-wordle.netlify.app)
 
 Alternatively, you may clone the repository using:
 
-## `git clone`
+### `git clone`
 
 followed by the web URL.
 
