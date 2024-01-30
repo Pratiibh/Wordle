@@ -1,4 +1,4 @@
-[data-theme="dark"] {
+:root {
   --background-app-color: #121212;
   --nav-h1-color: white;
   --board-border-color: #121212;
