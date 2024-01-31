@@ -17,13 +17,15 @@ const ToggleMode = () => {
     const selectedTheme = localStorage.getItem("selectedTheme");
     if(selectedTheme === "dark"){
         toggleDark();
+    } else if(selectedTheme === "light"){
+        toggleLight();
     }
 
     const toggleTheme = (e) => {
         if (e.target.checked) toggleDark();
         else toggleLight();
     };
-    
+
     return (
         <div className='dark_mode'>
             <input

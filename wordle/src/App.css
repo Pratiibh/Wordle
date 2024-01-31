@@ -1,4 +1,4 @@
-:root {
+[data-theme="dark"] {
   --background-app-color: #121212;
   --nav-h1-color: white;
   --board-border-color: #121212;
@@ -18,7 +18,7 @@
   --border-bottom-color: grey;
 }
 
-[data-theme="light"] {
+:root {
   --background-app-color: white;
   --nav-h1-color: #121212;
   --board-border-color: white;
@@ -230,6 +230,10 @@ div.letter:not(:empty) {
 
 * :not(#correct, #almost, #error){
   transition: all 1s ease-in-out;
+}
+
+#correct, #almost, #error{
+  transition: all 500ms ease-in-out;
 }
 
 /* animations */
