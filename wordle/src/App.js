@@ -57,12 +57,16 @@ function App() {
         }
 
         if (currWord === correctWord) {
-            setGameOver({gameOver: true, guessedWord: true});
+            setTimeout(() => {
+                setGameOver({gameOver: true, guessedWord: true});
+            }, 1.75 * 1000);
             return;
         }
 
         if (currAttempt.attempt === 5 && wordSet.has(currWord.toLowerCase())) {
-            setGameOver({gameOver: true, guessedWord: false});
+            setTimeout(() => {
+                setGameOver({gameOver: true, guessedWord: false});
+            }, 1.75 * 1000);
         } else if(currAttempt.attempt === 5 && !(wordSet.has(currWord.toLowerCase()))){
             return;
         }
