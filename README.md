@@ -7,7 +7,7 @@ Upon finishing a puzzle, simply refresh the page and a new puzzle will be ready 
 
 # Access
 
-Play at [infinite-wordle.netlify.app](infinite-wordle.netlify.app)
+Play at [infinite-wordle.netlify.app](http://infinite-wordle.netlify.app)
 
 Alternatively, you may clone the repository using:
 
